@@ -23,4 +23,7 @@ object Day1Problem extends App {
   }
 
   bottlesOfBeer(99)
+
+
+
 }
