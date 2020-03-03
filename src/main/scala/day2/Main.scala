@@ -7,8 +7,7 @@ object Main extends App {
     word = word.replace(char1, char2)
     word
   }
-
-  println(stringChar("Ha", "llo", 'a', 'e'))
+//  println(stringChar("Ha", "llo", 'a', 'e'))
 
   def adder(a: Int, b: Int, check: Boolean) = {
     if (a == 0) {
@@ -22,26 +21,23 @@ object Main extends App {
       a * b
     }
   }
+//  println(adder(9, 14, check = false))
 
-  println(adder(9, 14, false))
-
-  def iterator(word: String, num: Int) = {
+  def iterator(word: String, num: Int): Unit = {
     for (i <- 1 to num) {
       println(word)
     }
   }
+//  iterator("trash", 2)
 
-  iterator("trash", 2)
-
-  def iteratorSquare(word: String, num: Int) = {
+  def iteratorSquare(word: String, num: Int): Unit = {
     for (i <- 1 to num) {
       println(word * num)
     }
   }
+//  iteratorSquare("Hello", 5)
 
-  iteratorSquare("Hello", 5)
-
-  def fizzBuzz(fizz: String, buzz: String, num: Int) = {
+  def fizzBuzz(fizz: String, buzz: String, num: Int): Unit = {
     for (i <- 1 to num) {
       var str = new StringBuilder
 
@@ -56,9 +52,9 @@ object Main extends App {
       println(str)
     }
   }
+//  fizzBuzz("Fizz", "Buzz", 15)
 
-  fizzBuzz("Fizz", "Buzz", 15)
-
+  @scala.annotation.tailrec
   def iterationRecursion(word: String, num: Int): Int = {
     if (num == 0) 0
     else {
@@ -66,18 +62,18 @@ object Main extends App {
       iterationRecursion(word, num - 1)
     }
   }
+//  iterationRecursion("trash", 5)
 
-  iterationRecursion("trash", 5)
-
+  @scala.annotation.tailrec
   def iterationRecursion2(word: String, num: Int, init: Int): Int = {
     if (num != 0) {
       println(word * init)
       iterationRecursion2(word, num - 1, 5)
     } else 0
   }
+//  iterationRecursion2("Hello", 5, 5)
 
-  iterationRecursion2("Hello", 5, 5)
-
+  @scala.annotation.tailrec
   def iterationRecursion3(fizz: String, buzz: String, target: Int, num: Int): Int = {
     if (num <= target) {
 
@@ -95,8 +91,22 @@ object Main extends App {
       iterationRecursion3(fizz, buzz, target, num + 1)
     } else 0
   }
+//  iterationRecursion3("Fizz", "Buzz", 15, 1)
 
-  iterationRecursion3("Fizz", "Buzz", 15, 1)
+  def patternAdder(a: Int, b: Int, check: Boolean) = (a, b, check) match {
+    case (_, 0, _) => a
+    case (0, _, _) => b
+    case (_, _, true) => a + b
+    case (_, _, false) => a * b
+    case _ => -1
+  }
+//  println(patternAdder(14, 9, check = true))
+
+  def patternMatching2(a: Int, b:Int): Unit = (a, b) match {
+    case(_,_) => println(s"$b $a")
+  }
+
+  patternMatching2(9, 14)
 
 
 }
