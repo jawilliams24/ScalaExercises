@@ -1,3 +1,5 @@
+package Initial
+
 object Main extends App {
 
   println("James is trash")
@@ -46,4 +48,3 @@ object Main extends App {
     count+1
   } while (count>11)
 }
-
