@@ -2,7 +2,7 @@ package day4
 
 object Main extends App {
 
-  def creditCardDoubler(num: Long, check: Boolean) = {
+  def creditCardDoubler(num: Long, check: Boolean): Unit = {
     var numberOfDigits = num.toString.length
     var doubler = false
     var nums = num.toString.toCharArray.map(x => x.getNumericValue.toLong)
@@ -29,6 +29,6 @@ object Main extends App {
     units + tens
   }
 
-  creditCardDoubler(num = 49927398716L, true)
+  creditCardDoubler(num = 49927398716L, check = true)
 
 }

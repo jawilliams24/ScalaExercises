@@ -19,7 +19,7 @@ class BattleBoard {
     difficulty
   }
 
-  def boardBuilder() = {
+  def boardBuilder(): Array[Array[String]] = {
     val difficulty = getDifficulty()
     var height = 0
     var width = 0
@@ -38,7 +38,7 @@ class BattleBoard {
 
   }
 
-  def boardPrinter() = {
+  def boardPrinter(): Unit = {
     val board = boardBuilder()
     val size = board.length
     for (i <- 0 until size) {
@@ -50,8 +50,5 @@ class BattleBoard {
     }
   }
 
-  def boardFiller() = {
-
-  }
 
 }

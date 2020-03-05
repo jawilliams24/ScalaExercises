@@ -19,7 +19,7 @@ object HangmanGame {
 
   def main(args: Array[String]): Unit = {
 
-    def hangmanWord() = {
+    def hangmanWord(): Unit = {
       val filename = "/home/qa-admin/Documents/hangmanwords.txt"
       var hiddenWord = Source.fromFile(filename).getLines().toList
       val currentWord = hiddenWord(scala.util.Random.nextInt(hiddenWord.length)).toLowerCase
@@ -44,7 +44,7 @@ object HangmanGame {
             println(success)
             if (success.length == currentWord.length) {
               guess == currentWord
-              playing == false
+              !playing
               println(s"The word was $guessWord")
               println("Congratulations, you win!")
             }
@@ -52,7 +52,7 @@ object HangmanGame {
             lives -= 1
             println(s"You have $lives lives remaining")
             if (lives == 0) {
-              playing == false
+              !playing
               println("You lose!")
             }
           }

@@ -4,9 +4,7 @@ object Main extends App {
 
   println("James is trash")
 
-  var ting = "Eclipse is James"
-
-  ting = "thing"
+  val ting = "Eclipse is James
 
   class Person(var name: String, var age: Int)
 
@@ -27,7 +25,7 @@ object Main extends App {
   isEven(7)
   isEven(12)
 
-  var num = 12
+  val num = 12
   println(num+8)
   println(num.+(8))
 

@@ -47,7 +47,7 @@ object Main extends App {
       if (i % 5 == 0) {
         str.append(buzz)
       }
-      if (str.isEmpty) str = new StringBuilder(i.toString())
+      if (str.isEmpty) str = new StringBuilder(i.toString)
 
       println(str)
     }
@@ -85,7 +85,7 @@ object Main extends App {
         str.append(buzz)
       }
       if (str.isEmpty) {
-        str = new StringBuilder(num.toString())
+        str = new StringBuilder(num.toString)
       }
       println(str)
       iterationRecursion3(fizz, buzz, target, num + 1)
