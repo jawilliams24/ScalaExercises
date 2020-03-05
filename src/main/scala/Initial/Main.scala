@@ -4,7 +4,7 @@ object Main extends App {
 
   println("James is trash")
 
-  val ting = "Eclipse is James
+  val ting = "Eclipse is James"
 
   class Person(var name: String, var age: Int)
 
@@ -40,7 +40,7 @@ object Main extends App {
 
   for(i<- 1 to 3) yield i
 
-  var count = 0;
+  val count = 0;
   do {
     println("Counting to 10")
     count+1
