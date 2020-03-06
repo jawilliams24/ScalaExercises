@@ -9,6 +9,8 @@ object RPSLS extends App {
   var scissorsCount = 0
   var lizardCount = 0
   var spockCount = 0
+  var playerWin = 0
+  var computerWin = 0
   var playCount = 0
   var playing = true
 
@@ -61,10 +63,6 @@ object RPSLS extends App {
           stillPlaying(playCount: Int)
           optionChooser()
       }
-      //      if (rockCount > 10 | paperCount > 10 | scissorsCount > 10 | lizardCount > 10 | spockCount > 10) {
-      //        playing = true
-      //        optionChooser()
-      //      }
     }
 
     def rockChosen(playerChoice: String, computerChoice: String): Unit = {
@@ -72,21 +70,28 @@ object RPSLS extends App {
       computerChoice match {
         case ("rock") => println("You draw, you both picked rock!")
         case ("paper") => println("You lose, paper covers rock!")
+          computerWin += 1
         case ("scissors") => println("You win, rock crushes scissors!")
+          playerWin += 1
         case ("lizard") => println("You win, rock crushes lizard!")
+          playerWin += 1
         case ("spock") => println("You lose, spock vaporises rock!")
+          computerWin += 1
       }
-      println(rockCount)
     }
 
     def paperChosen(playerChoice: String, computerChoice: String): Unit = {
       paperCount += 1
       computerChoice match {
         case ("rock") => println("You win, paper covers rock!")
+          playerWin += 1
         case ("paper") => println("You draw, you both picked paper!")
         case ("scissors") => println("You lose scissors cut paper!")
+          computerWin += 1
         case ("lizard") => println("You lose, lizard eats paper!")
+          computerWin += 1
         case ("spock") => println("You win, paper disproves spock!")
+          playerWin += 1
       }
     }
 
@@ -94,10 +99,14 @@ object RPSLS extends App {
       scissorsCount += 1
       computerChoice match {
         case ("rock") => println("You lose, rock cruses scissors!")
+          computerWin += 1
         case ("paper") => println("You win, scissors cut paper!")
+          playerWin += 1
         case ("scissors") => println("You draw, you both picked scissors!")
         case ("lizard") => println("You win, scissors decapitates lizard!")
+          playerWin += 1
         case ("spock") => println("You lose, spock smashes scissors!")
+          computerWin +=1
       }
     }
 
@@ -105,10 +114,14 @@ object RPSLS extends App {
       lizardCount += 1
       computerChoice match {
         case ("rock") => println("You lose, rock crushes lizard!")
+          computerWin += 1
         case ("paper") => println("You win, lizard eats paper!")
+          playerWin += 1
         case ("scissors") => println("You lose, scissors decapitates lizard!")
+          computerWin += 1
         case ("lizard") => println("You draw, you both picked lizard!")
         case ("spock") => println("You win, lizard poisons spock!")
+          playerWin += 1
       }
     }
 
@@ -116,16 +129,24 @@ object RPSLS extends App {
       spockCount += 1
       computerChoice match {
         case ("rock") => println("You win, spock vaporises rock!")
+          playerWin += 1
         case ("paper") => println("You lose, paper disproves spock!")
+          computerWin += 1
         case ("scissors") => println("You win, spock smashes scissors!")
+          playerWin += 1
         case ("lizard") => println("You lose, lizard poisons spock!")
+          computerWin += 1
         case ("spock") => println("You draw, you both picked spock!")
       }
     }
 
   }
 
+  def rockCheck(rockCount: Int): Unit = {
+    if(rockCount > 3) {
+
+    }
+  }
 
   optionChooser()
-
 }
