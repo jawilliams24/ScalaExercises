@@ -8,8 +8,7 @@ object TooHot extends App {
 
   def temperatureCheck(): Unit = {
     var isSummer: Boolean = summerCheck()
-    var temperature = scala.io.StdIn.readLine("What is the temperature? ").toInt
-    println(temperature)
+    val temperature = scala.io.StdIn.readLine("What is the temperature? ").toInt
     if (isSummer) {
       if (temperature <= 100) {
         if (temperature >= 60) println("Just right!")
