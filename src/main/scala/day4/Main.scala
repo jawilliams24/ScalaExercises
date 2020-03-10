@@ -2,7 +2,7 @@ package day4
 
 object Main extends App {
 
-  def creditCardDoubler(num: Long, check: Boolean): Unit = {
+  def creditCardDoubler(num: Long, check: Boolean): Boolean = {
     var numberOfDigits = num.toString.length
     var doubler = false
     var nums = num.toString.toCharArray.map(x => x.getNumericValue.toLong)
@@ -20,7 +20,7 @@ object Main extends App {
         nums = nums.dropRight(1)
       }
     }
-    println(total % 10 == 0)
+    total % 10 == 0
   }
 
   def numberSplitter(num: Long) = {
